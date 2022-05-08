@@ -48,7 +48,7 @@ then
       do
       rsync -avh -e "ssh -o StrictHostKeyChecking=no -i /home/uslu/.ssh/id_rsa -p65520" --exclude "*.m3u" --exclude "/home/uslu/ropongi/uploads/genres" --include-from "/home/uslu/gstool/extensions.dll" --partial --bwlimit="$ancho_banda" --delete --progress --log-file=/home/uslu/AdsSync_r/updatelogs/$(date +%Y%m%d)_realt.log uxm3@uxmde.uxmalstream.com:{/home/uxm3/users/$client_user/contenidos/Banners,/home/uxm3/users/$client_user/contenidos/Video_chico,/home/uxm3/users/$client_user/contenidos/Spots_con_audio,/home/uxm3/users/$client_user/contenidos/Spots_sin_audio,/home/uxm3/users/$client_user/contenidos/imagenes-flotantes} /home/uslu/elements/;
       RC=$?
-      rm /home/uslu/AdsSync/updatelogs/*realt.log
+      rm /home/uslu/AdsSync_r/updatelogs/*realt.log
       if [[ $RC -eq 23  ]] || [[ $RC -eq 20 ]]
       then
       sleep 60
